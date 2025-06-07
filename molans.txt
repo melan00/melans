@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Love Letter to Hazel</title>
+<style>
+  body {
+    background: #f7e6ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Georgia', serif;
+  }
+
+  .envelope-container {
+    width: 600px;
+    cursor: pointer;
+    perspective: 1000px;
+  }
+
+  .envelope {
+    position: relative;
+    width: 100%;
+    background: #fff0f6;
+    border: 2px solid #d88ca7;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(216, 140, 167, 0.4);
+    overflow: hidden;
+  }
+
+  /* Letter content */
+  .letter {
+    padding: 40px 40px 80px 40px;
+    color: #4a2c3a;
+    line-height: 1.6;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+  }
+
+  .letter.open {
+    max-height: 1000px; /* enough to show the whole letter */
+    opacity: 1;
+  }
+
+  /* Envelope flap */
+  .flap {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: #d88ca7;
+    border-radius: 12px 12px 0 0;
+    transform-origin: bottom center;
+    transition: transform 0.8s ease;
+    box-shadow: 0 3px 8px rgba(216, 140, 167, 0.3);
+  }
+
+  .flap::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    width: 440px;
+    height: 40px;
+    background: #fff0f6;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+
+  /* Flap open animation */
+  .envelope.open .flap {
+    transform: rotateX(-180deg);
+  }
+
+  h1 {
+    text-align: center;
+    color: #a8325e;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  .signature {
+    margin-top: 40px;
+    font-style: italic;
+    text-align: right;
+    font-size: 1.1em;
+    color: #a8325e;
+  }
+</style>
+</head>
+<body>
+
+<div class="envelope-container" id="envelopeContainer" aria-label="Envelope with love letter. Click to open or close.">
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="letter" id="letter">
+      <h1>My Dearest Hazel,</h1>
+      <p>I don’t think words can truly capture how much I miss you right now. Every moment without you feels like a quiet echo in my heart — a reminder of how deeply you’ve become a part of my soul.</p>
+      <p>I find myself thinking about your smile, the way your eyes light up when you laugh, and the warmth of your presence that makes everything feel right. It’s in those little things that I feel the ache of missing you the most.</p>
+      <p>Distance may keep us apart for now, but it can never dim the love I carry for you. I’m counting down the days until I can be close to you again, to hold you, to talk for hours, and to share those simple, perfect moments that mean everything to me.</p>
+      <p>Until then, know that you’re in every beat of my heart and every thought I have. Hazel, you are my joy, my comfort, and my forever.</p>
+      <p>I love you more than words can say, and I miss you more than you can imagine.</p>
+      <p class="signature">Yours always,<br />Melan cute</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const envelopeContainer = document.getElementById('envelopeContainer');
+  const envelope = document.getElementById('envelope');
+  const letter = document.getElementById('letter');
+
+  envelopeContainer.addEventListener('click', () => {
+    envelope.classList.toggle('open');
+    letter.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
