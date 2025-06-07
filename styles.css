@@ -1,0 +1,124 @@
+body {
+  background: #f0e68c;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.click-box {
+  width: 150px;
+  height: 60px;
+  background: #b5651d;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 15px #b5651d99;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.click-box:hover {
+  background: #8b4513;
+  box-shadow: 0 0 30px #8b451399;
+}
+
+.hidden-content {
+  margin-top: 30px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: none;
+  z-index: 2;
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
+  display: block;
+}
+
+.heart {
+  font-size: 80px;
+  color: #d2691e;
+  animation: shine 2s infinite alternate;
+  filter: drop-shadow(0 0 10px #d2691e88);
+}
+
+@keyframes shine {
+  0% {
+    text-shadow: 0 0 10px #ffe4b5, 0 0 20px #d2691e, 0 0 30px #d2691e;
+  }
+  100% {
+    text-shadow: 0 0 20px #ffe4b5, 0 0 40px #d2691e, 0 0 60px #a0522d;
+  }
+}
+
+.romantic-design {
+  margin-top: 15px;
+  font-size: 30px;
+  color: #cd853f;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.love-word {
+  margin-top: 20px;
+  font-size: 26px;
+  color: #8b0000;
+  font-style: italic;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.next-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 120px;
+  height: 50px;
+  background: #b5651d;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #b5651d99;
+  display: none;
+  z-index: 2;
+}
+
+.next-visible {
+  display: block;
+}
+
+.next-button:hover {
+  background: #8b4513;
+  box-shadow: 0 0 20px #8b451399;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
